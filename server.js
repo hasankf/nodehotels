@@ -11,27 +11,11 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());  // converts ANY data to json format and puts in req.body
 
 
-
-
 app.get('/', function(req, res) {    // GET is just to retrieve the data and not do anything about it.
     res.send('kiss my ass')         // response print hoga
 })
 
-
-
-
 // POST METHOD for person
-
-// GET METHOD
-
-
-
-
-
-
-
-
-
 // GET METHOD
 
 
