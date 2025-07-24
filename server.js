@@ -4,6 +4,7 @@ const express = require ('express')
 const app = express();   // bani banayi
 
 const db = require ('./db');
+require('dotenv').config();
 
 
 const bodyParser = require('body-parser');
@@ -44,9 +45,9 @@ app.use('/menuItem', menuRoutes);
 
 
 
+const PORT = process.env.PORT || 3000
 
-
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("SERVER RUNNING")
 })// port address. PUT THIS IN YOUR BROWSER AFTER RUNNING THIS PROGRAM
 
