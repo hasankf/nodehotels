@@ -4,7 +4,7 @@
   "description": "my first ever node js program started on 23/MAY/2025",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node server.js"
   },
   "author": "HASAN",
   "license": "ISC",
