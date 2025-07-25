@@ -9,9 +9,21 @@ require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());  // converts ANY data to json format and puts in req.body
+const PORT = process.env.PORT || 3000
 
 
-app.get('/', function(req, res) {    // GET is just to retrieve the data and not do anything about it.
+//middleware function
+const logRequest =(req,res,next) => {
+    console.log(`[${new Date().toLocaleString()}] Request Made to: ${req.originalUrl}`);
+    next();  // move on to next phase;
+
+}
+
+
+
+
+
+app.get('/', logRequest, function(req, res) {    // GET is just to retrieve the data and not do anything about it.
     res.send('kiss my ass')         // response print hoga
 })
 
@@ -29,7 +41,6 @@ app.use('/menuItem', menuRoutes);
 
 
 
-const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {
     console.log("SERVER RUNNING")
